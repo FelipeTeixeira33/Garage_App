@@ -1,5 +1,5 @@
 {
-  "name": "Garage",
+  "name": "garage_app",
   "integrations": {
     "capacitor": {}
   },

@@ -1,0 +1,132 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">ola</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="icon">
+        <ion-icon name="person-circle-outline" size="large" (click)="toggle('user')"></ion-icon>
+        <p>User</p>
+      </ion-col>
+      <ion-col class="icon">
+        <ion-icon name="car-outline" size="large" (click)="toggle('vehicle')"></ion-icon>
+        <p>Vehicle</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Details do User -->
+  <div *ngIf="showUser">
+    <ion-item>
+      <ion-label>First Name: </ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name: </ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Phone Number: </ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>E-mail:</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+    
+    <ion-button fill="outline" color="success" href="../u-home">Save</ion-button>
+
+  </div>
+
+  <!-- Details about vehicle MAke, model, years and  -->
+  <div *ngIf="showVehicle">
+    <ion-item>
+      <ion-label>Make</ion-label>
+      <ion-select placeholder="Select any Make">
+        <ion-select-option value="audi">Audi</ion-select-option>
+        <ion-select-option value="BMW">BMW</ion-select-option>
+        <ion-select-option value="citroen">Citroen</ion-select-option>
+        <ion-select-option value="fiat">Fiat</ion-select-option>
+        <ion-select-option value="ford">Ford</ion-select-option>
+        <ion-select-option value="honda">Honda</ion-select-option>
+        <ion-select-option value="hyundai">Hyundai</ion-select-option>
+        <ion-select-option value="jaguar">Jaguar</ion-select-option>
+        <ion-select-option value="kia">Kia</ion-select-option>
+        <ion-select-option value="land rover">Land Rover</ion-select-option>
+        <ion-select-option value="lexus">Lexus</ion-select-option>
+        <ion-select-option value="mazda">Mazda</ion-select-option>
+        <ion-select-option value="mercedes-benz">Mercedes-Benz</ion-select-option>
+        <ion-select-option value="mistsubish">Mitsubishi</ion-select-option>
+        <ion-select-option value="pegeout">Pegout</ion-select-option>
+        <ion-select-option value="porshe">Porshe</ion-select-option>
+        <ion-select-option value="renault">Renault</ion-select-option>
+        <ion-select-option value="tesla">Tesla</ion-select-option>
+        <ion-select-option value="toyota">Toyota</ion-select-option>
+        <ion-select-option value="volkswagen">Volkswagen</ion-select-option>
+        <ion-select-option value="volvo">Volvo</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Model</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Year</ion-label>
+      <ion-select placeholder="Select any year">
+        <ion-select-option value="2023">2023</ion-select-option>
+        <ion-select-option value="2022">2022</ion-select-option>
+        <ion-select-option value="2021">2021</ion-select-option>
+        <ion-select-option value="2020">2020</ion-select-option>
+        <ion-select-option value="2019">2019</ion-select-option>
+        <ion-select-option value="2018">2018</ion-select-option>
+        <ion-select-option value="2017">2017</ion-select-option>
+        <ion-select-option value="2016">2016</ion-select-option>
+        <ion-select-option value="2015">2015</ion-select-option>
+        <ion-select-option value="2014">2014</ion-select-option>
+        <ion-select-option value="2013">2013</ion-select-option>
+        <ion-select-option value="2012">2012</ion-select-option>
+        <ion-select-option value="2011">2011</ion-select-option>
+        <ion-select-option value="2010">2010</ion-select-option>
+        <ion-select-option value="2009">2009</ion-select-option>
+        <ion-select-option value="2008">2008</ion-select-option>
+        <ion-select-option value="2007">2007</ion-select-option>
+        <ion-select-option value="2006">2006</ion-select-option>
+        <ion-select-option value="2005">2005</ion-select-option>
+        <ion-select-option value="2004">2004</ion-select-option>
+        <ion-select-option value="2003">2003</ion-select-option>
+        <ion-select-option value="2002">2002</ion-select-option>
+        <ion-select-option value="2001">2001</ion-select-option>
+        <ion-select-option value="2000">2000</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Placa</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-button fill="outline" color="success" href="../u-home">Save</ion-button>
+
+  </div>
+
+
+</ion-content>
+</ion-content>
+

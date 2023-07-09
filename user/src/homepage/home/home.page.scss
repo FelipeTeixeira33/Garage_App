@@ -1,0 +1,41 @@
+/* Sobre Card */
+ion-card.sobre-card {
+    background-color: #ff6207;
+    width: 300px;
+    height: 300px;
+   left: 60%;
+   top:30%;
+  }
+  
+  ion-card.sobre-card ion-card-title {
+    color: #000000;
+  }
+  
+  /* Serviços Card */
+  ion-card.servicos-card {
+    background-color: #6c9e6e;
+    width: 300px;
+    height: 300px;
+    left: 10%;
+    top:10%;
+  }
+  
+  ion-card.servicos-card ion-card-title {
+    color: #FFFFFF;
+  }
+  
+  register-button {
+    width: 150px; /* Ajuste a largura do botão */
+    height: 50px; /* Ajuste a altura do botão */
+    margin-top: 20px; /* Adicione margem acima do botão */
+    color: #ad0c0cb7; /* Cor do texto */
+    background-color: #eb1010;
+  }
+
+  
+  .header-image {
+    width: 100%; /* Ajuste a largura da imagem */
+    max-height: 200px; /* Ajuste a altura máxima da imagem */
+    object-fit: cover; /* Garante que a imagem cubra a área designada sem distorção */
+  }
+  

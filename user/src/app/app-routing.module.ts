@@ -41,7 +41,35 @@ const routes: Routes = [
     path: 'u-appointment',
     loadChildren: () => import('./u-appointment/u-appointment.module').then( m => m.UAppointmentPageModule)
   },
-  
+
+  {
+    path: 'adm',
+    loadChildren: () => import('./adm/adm.module').then( m => m.AdmPageModule)
+  },
+  {
+    path: 'adm-employer',
+    loadChildren: () => import('./adm-employer/adm-employer.module').then( m => m.AdmEmployerPageModule)
+  },
+
+  {
+    path: 'adm-appointment',
+    loadChildren: () => import('./adm-appointment/adm-appointment.module').then( m => m.AdmAppointmentPageModule)
+  },
+  {
+    path: 'adm-receipt',
+    loadChildren: () => import('./adm-receipt/adm-receipt.module').then( m => m.AdmReceiptPageModule)
+  },
+  {
+    path: 'u-booking',
+    loadChildren: () => import('./u-booking/u-booking.module').then( m => m.UBookingPageModule)
+  },
+
+ 
+  {
+    path: 'database',
+    loadChildren: () => import('./database/database.module').then( m => m.DatabasePageModule)
+  }
+
 
 
 ];

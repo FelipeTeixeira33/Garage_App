@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="">
+    </ion-buttons>
+    <ion-title>Database</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="emails.length > 0; else noEmails">
+    <ion-card *ngFor="let email of emails">
+      <ion-card-content>
+        {{ email }}
+      </ion-card-content>
+
+      <ion-button color="danger" (click)="deleteUser(email)">Delete</ion-button>
+
+    </ion-card>
+  </ion-list>
+
+  <!-- Mensagem quando não há emails cadastrados -->
+  <ng-template #noEmails>
+    <div class="ion-padding">
+      Any email was found </div>
+  </ng-template>
+</ion-content>

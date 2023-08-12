@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="outline" size="small" color="success" href='../adm'>Back</ion-button>
+    </ion-buttons>
+    <ion-title slot="start">Receipt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="custom-card">
+    <ion-item>
+      <ion-label>First Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="firstName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Last Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="secondName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Service's Type:</ion-label>
+      <ion-select [(ngModel)]="serviceType" (ionChange)="updateServicePrice()">
+        <ion-select-option value="Annual Service">Annual Service</ion-select-option>
+        <ion-select-option value="Major Service">Major Service</ion-select-option>
+        <ion-select-option value="Repair/Fault">Repair/Fault</ion-select-option>
+        <ion-select-option value="Major Repair">Major Repair</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Description:</ion-label>
+      <ion-input type="text" [(ngModel)]="customerCar"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Price:</ion-label>
+      <ion-input type="number" [(ngModel)]="servicePrice" readonly="true"></ion-input>
+    </ion-item>
+    <ion-button class="print-button" color="success" expand="full" (click)="printReceipt()">Print a receipt</ion-button>
+  </ion-card>
+</ion-content>

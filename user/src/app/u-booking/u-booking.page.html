@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-menu-button color="success"></ion-menu-button>
+  </ion-buttons>
+  <ion-toolbar>
+    <ion-title>Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content *ngIf="currentUser && currentVehicle" class="user-card">
+      <ion-card-title>{{ currentUser.firstName }} {{ currentUser.lastName }}</ion-card-title>
+      <ion-card-subtitle>{{ currentVehicle.make }} - {{ currentVehicle.model }} | {{ currentVehicle.year}}</ion-card-subtitle>
+
+      <ion-list *ngFor="let booking of currentBookings; let i = index">
+        <ion-card class="custom-card">
+          <ion-card-header>
+            <ion-card-title>{{booking.date}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-subtitle>Time: {{ booking.time }} | Status: {{ booking.status }}</ion-card-subtitle>
+          <ion-card-subtitle>Description: {{ booking.userDescription }} | Service: {{ booking.service }}</ion-card-subtitle>
+        </ion-card>
+        <ion-button (click)="deleteBooking(i)">Delete</ion-button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

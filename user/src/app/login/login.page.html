@@ -1,28 +1,30 @@
-<ion-header>
-</ion-header>
+<ion-content color="success" class="content-wrapper">
+  <ion-card class="login-card">
 
-<ion-content color="success" class="ion-padding ion-text-center">
-
-  <ion-card>
-    <ion-card-header>
+    <ion-card-header class="login-card__header">
       <ion-card-title>GER'S GARAGE</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content>
-      <!-- Login Form -->
-      <ion-item>
+    <ion-card-content class="login-card__content">
+      <div class="login-card__subtitle">Enter your login, Enjoy your App!</div>
+
+      <ion-item class="login-card__item">
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item class="login-card__item">
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
       </ion-item>
 
-      <ion-button expand="full" fill="outline" color="primary" href="../u-home" >Login</ion-button>
+      <ion-button class="login-card__button" color="success" expand="full" fill="outline"
+        (click)="login()">Login</ion-button>
 
-      <p>If you don't have an account, <a href="../signup">click here</a>.</p>
+      <p class="login-card__signup-prompt">If you don't have an account, <a routerLink="/signup">click here</a>.</p>
     </ion-card-content>
+
+    <p *ngIf="errorMessage" class="login-card__error">{{ errorMessage }}</p>
+
   </ion-card>
-</ion-content>e
+</ion-content>

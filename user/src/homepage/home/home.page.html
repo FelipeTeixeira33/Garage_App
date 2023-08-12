@@ -1,35 +1,36 @@
-<ion-content [fullscreen]="true" color="success" class="ion-padding ion-text-center">
-  <ion-header collapse="condense">
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+  
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
+      <ion-title>Ger's Garage</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <img src="assets/camera.png" class="header-image">
-
+  
   <div class="container">
-    <!-- Sobre Card -->
-    <ion-card class="sobre-card">
+   
+    <ion-card class="about">
       <ion-card-header>
-        <ion-card-title>Sobre</ion-card-title>
+        <ion-card-title>About</ion-card-title>
       </ion-card-header>
-
       <ion-card-content>
-        <p>Aqui está uma breve descrição sobre a nossa empresa. Nós somos uma empresa especializada em...</p>
+        <p>Ger's garage is a company run by Ger where he performs maintenance 
+          checks for all types of small and medium vehicles </p>
       </ion-card-content>
     </ion-card>
 
-    <!-- Serviços Card -->
-    <ion-card class="servicos-card">
-      <ion-card-header>
-        <ion-card-title>Serviços</ion-card-title>
-      </ion-card-header>
 
+    <ion-card class="service">
+      <ion-card-header>
+        <ion-card-title>Services</ion-card-title>
+      </ion-card-header>
       <ion-card-content>
-        <p>Aqui estão os serviços que oferecemos. Oferecemos uma gama variada de serviços, incluindo...</p>
+        <p>In Ger's garage you can find at least 4 types of booking: </p>
+          <p>1) Annual Service</p>
+          <p>2) Major Service</p>
+          <p>3) Repair / Fault</p>  
+          <p>4) Major Repair</p>
       </ion-card-content>
     </ion-card>
-
-    <ion-button class="register-button" href="../login">Register Here</ion-button>
+    <ion-button fill="outline" color="success" class="register-button" href="../login">Appointment</ion-button>
   </div>
 </ion-content>

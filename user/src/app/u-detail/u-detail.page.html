@@ -1,22 +1,13 @@
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="success"></ion-menu-button>
     </ion-buttons>
     <ion-title>Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ola</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-
-<ion-content class="ion-padding">
+<ion-content [fullscreen]="true" class="ion-padding center-content">
   <ion-grid>
     <ion-row>
       <ion-col class="icon">
@@ -30,66 +21,96 @@
     </ion-row>
   </ion-grid>
 
-  <!-- Details do User -->
   <div *ngIf="showUser">
-    <ion-item>
-      <ion-label>First Name: </ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Last Name: </ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Phone Number: </ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>E-mail:</ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
-    
-    <ion-button fill="outline" color="success" href="../u-home">Save</ion-button>
+    <ion-list>
+      <ion-card *ngFor="let user of users; let i = index">
+        <ion-card-header>
+          <ion-card-title>{{user.firstName}} {{user.lastName}}</ion-card-title>
+          <ion-card-subtitle>{{user.phoneNumber}} | {{user.email}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button class="delete-button" color="danger" (click)="deleteUser(i)">Delete</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
 
+    <ion-item-group>
+      <ion-item>
+        <ion-label>First Name:</ion-label>
+        <ion-input [(ngModel)]="newUser.firstName" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Last Name:</ion-label>
+        <ion-input [(ngModel)]="newUser.lastName" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Phone Number:</ion-label>
+        <ion-input [(ngModel)]="newUser.phoneNumber" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>E-mail:</ion-label>
+        <ion-input [(ngModel)]="newUser.email" type="email"></ion-input>
+      </ion-item>
+    </ion-item-group>
+    <ion-button color="success" (click)="saveUser()" expand="full">Save</ion-button>
   </div>
 
-  <!-- Details about vehicle MAke, model, years and  -->
   <div *ngIf="showVehicle">
-    <ion-item>
-      <ion-label>Make</ion-label>
-      <ion-select placeholder="Select any Make">
-        <ion-select-option value="audi">Audi</ion-select-option>
-        <ion-select-option value="BMW">BMW</ion-select-option>
-        <ion-select-option value="citroen">Citroen</ion-select-option>
-        <ion-select-option value="fiat">Fiat</ion-select-option>
-        <ion-select-option value="ford">Ford</ion-select-option>
-        <ion-select-option value="honda">Honda</ion-select-option>
-        <ion-select-option value="hyundai">Hyundai</ion-select-option>
-        <ion-select-option value="jaguar">Jaguar</ion-select-option>
-        <ion-select-option value="kia">Kia</ion-select-option>
-        <ion-select-option value="land rover">Land Rover</ion-select-option>
-        <ion-select-option value="lexus">Lexus</ion-select-option>
-        <ion-select-option value="mazda">Mazda</ion-select-option>
-        <ion-select-option value="mercedes-benz">Mercedes-Benz</ion-select-option>
-        <ion-select-option value="mistsubish">Mitsubishi</ion-select-option>
-        <ion-select-option value="pegeout">Pegout</ion-select-option>
-        <ion-select-option value="porshe">Porshe</ion-select-option>
-        <ion-select-option value="renault">Renault</ion-select-option>
-        <ion-select-option value="tesla">Tesla</ion-select-option>
-        <ion-select-option value="toyota">Toyota</ion-select-option>
-        <ion-select-option value="volkswagen">Volkswagen</ion-select-option>
-        <ion-select-option value="volvo">Volvo</ion-select-option>
-      </ion-select>
-    </ion-item>
+    <ion-list>
+      <ion-card *ngFor="let vehicle of vehicles; let vIndex = index">
+        <ion-card-header>
+          <ion-card-title>{{vehicle.make}} - {{vehicle.model}} | {{vehicle.year}}</ion-card-title>
+          <ion-card-subtitle>
+            {{vehicle.engineType}} | {{vehicle.license}}
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button class="delete-button" color="danger" (click)="deleteVehicle(vIndex)">Delete</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+
+
+
+
+  <ion-item>
+    <ion-label>Make</ion-label>
+    <ion-select [(ngModel)]="newVehicle.make" placeholder="Select any Make">
+      <ion-select-option value="Audi">Audi</ion-select-option>
+      <ion-select-option value="BMW">BMW</ion-select-option>
+      <ion-select-option value="Citroen">Citroen</ion-select-option>
+      <ion-select-option value="Fiat">Fiat</ion-select-option>
+      <ion-select-option value="Ford">Ford</ion-select-option>
+      <ion-select-option value="Honda">Honda</ion-select-option>
+      <ion-select-option value="Hyundai">Hyundai</ion-select-option>
+      <ion-select-option value="Jaguar">Jaguar</ion-select-option>
+      <ion-select-option value="Kia">Kia</ion-select-option>
+      <ion-select-option value="Land Rover">Land Rover</ion-select-option>
+      <ion-select-option value="Lexus">Lexus</ion-select-option>
+      <ion-select-option value="Mazda">Mazda</ion-select-option>
+      <ion-select-option value="Mercedes-benz">Mercedes-Benz</ion-select-option>
+      <ion-select-option value="Mistsubish">Mitsubishi</ion-select-option>
+      <ion-select-option value="Pegeout">Pegeout</ion-select-option>
+      <ion-select-option value="Porshe">Porshe</ion-select-option>
+      <ion-select-option value="Renault">Renault</ion-select-option>
+      <ion-select-option value="Tesla">Tesla</ion-select-option>
+      <ion-select-option value="Toyota">Toyota</ion-select-option>
+      <ion-select-option value="Volkswagen">Volkswagen</ion-select-option>
+      <ion-select-option value="Volvo">Volvo</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
 
     <ion-item>
-      <ion-label>Model</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label position=" Default Input">Model: </ion-label>
+      <ion-input [(ngModel)]="newVehicle.model" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Year</ion-label>
-      <ion-select placeholder="Select any year">
+      <ion-select [(ngModel)]="newVehicle.year" placeholder="Select any year">
+        <ion-select-option value="2024">2024</ion-select-option>
         <ion-select-option value="2023">2023</ion-select-option>
         <ion-select-option value="2022">2022</ion-select-option>
         <ion-select-option value="2021">2021</ion-select-option>
@@ -118,15 +139,18 @@
     </ion-item>
     
     <ion-item>
-      <ion-label>Placa</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label>Engine type</ion-label>
+      <ion-select [(ngModel)]="newVehicle.engineType" placeholder="Select any year">
+        <ion-select-option value="Diesel">Diesel</ion-select-option>
+        <ion-select-option value="Petrol">Petrol</ion-select-option>
+        <ion-select-option value="Hibrid">Hybrid</ion-select-option>
+        <ion-select-option value="Eletric">Eletric</ion-select-option>
+      </ion-select>
     </ion-item>
 
-    <ion-button fill="outline" color="success" href="../u-home">Save</ion-button>
-
-  </div>
-
-
-</ion-content>
-</ion-content>
+    <ion-item>
+      <ion-label position=" Default Input">Vehicle Licence: </ion-label>
+      <ion-input [(ngModel)]="newVehicle.license" type="text"></ion-input>
+    </ion-item>
+    <ion-button color="success" (click)="saveVehicle()" expand="full">Save</ion-button>
 

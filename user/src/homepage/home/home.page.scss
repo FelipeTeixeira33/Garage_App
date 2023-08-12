@@ -1,41 +1,53 @@
-/* Sobre Card */
-ion-card.sobre-card {
-    background-color: #ff6207;
-    width: 300px;
-    height: 300px;
-   left: 60%;
-   top:30%;
-  }
-  
-  ion-card.sobre-card ion-card-title {
-    color: #000000;
-  }
-  
-  /* Serviços Card */
-  ion-card.servicos-card {
-    background-color: #6c9e6e;
-    width: 300px;
-    height: 300px;
-    left: 10%;
-    top:10%;
-  }
-  
-  ion-card.servicos-card ion-card-title {
-    color: #FFFFFF;
-  }
-  
-  register-button {
-    width: 150px; /* Ajuste a largura do botão */
-    height: 50px; /* Ajuste a altura do botão */
-    margin-top: 20px; /* Adicione margem acima do botão */
-    color: #ad0c0cb7; /* Cor do texto */
-    background-color: #eb1010;
+ion-toolbar {
+  min-height: 30%;
+  font-size: 190%; 
+  background: transparent;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%; /* ocupa a largura total do seu container pai */
+}
+
+.about, .service {
+  color: #000000;
+  width: 70%; /* Deixa 10% de espaço (5% em cada lado) */
+}
+
+.about,.service {
+  background-color: #7defad;
+}
+
+
+ion-card-title {
+  color: #000000;
+  font-size: 130%; /* Ajuste conforme necessário */
+}
+
+.register-button {
+  margin-top: 15%;
+}
+
+
+@media screen and (max-width: 600px) {
+  ion-title {
+    font-size: 90%; 
   }
 
-  
-  .header-image {
-    width: 100%; /* Ajuste a largura da imagem */
-    max-height: 200px; /* Ajuste a altura máxima da imagem */
-    object-fit: cover; /* Garante que a imagem cubra a área designada sem distorção */
+  .about, .service {
+    width: 70%; /* Pode querer mais largura em dispositivos pequenos */
   }
-  
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  ion-title {
+    font-size: 105%; 
+  }
+  .about, .service {
+    width: 92%; 
+  }
+}

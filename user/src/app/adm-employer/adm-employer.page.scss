@@ -1,0 +1,22 @@
+ion-card-header {
+  text-align: center;
+}
+
+ion-card-title, ion-card-subtitle {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.delete-button, .edit-button {
+  display: inline-block;
+  margin: 0.5rem;
+  width: 25%;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+ion-card {
+  text-align: center;
+}

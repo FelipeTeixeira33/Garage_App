@@ -1,12 +1,29 @@
-ion-content {
+.content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-ion-card {
-  height: 600px;
-  width: 600px;
-left: 100px;  
-top: 100px;
+.registration-card {
+  height: 70%;
+  width: 90%;
+  left: 2.5%;
+  top: 10%;
+}
+
+.registration-card__error {
+  color: red;
+  margin-top: 5%;
+}
+
+.registration-card__subtitle {
+  font-size: 1rem;
+  color: #666;
+  padding: 5%;
+}
+
+.registration-card__register-button {
+  margin-top: 2rem; 
 }

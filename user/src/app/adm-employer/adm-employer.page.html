@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="outline" size="small" color="success" href='../adm'>Back</ion-button>
+    </ion-buttons>
+    <ion-title slot="start">Employees</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let employee of employees; let i = index">
+      <ion-card-header>
+        <ion-card-title>{{employee.firstName}} {{employee.secondName}}</ion-card-title>
+        <ion-card-subtitle>{{employee.position}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-button class="delete-button" color="danger" (click)="deleteEmployee(i)">Delete</ion-button>
+      <ion-button class="edit-button" color="success" (click)="editEmployee(i)">Edit</ion-button>
+    </ion-card>
+  </ion-list>
+
+  <ion-item>
+    <ion-input position="floating" [(ngModel)]="newEmployee.firstName" placeholder="First Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="newEmployee.secondName" placeholder="Second Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="newEmployee.position" placeholder="Position"></ion-input>
+  </ion-item>
+
+  <ion-button color="success" expand="full" *ngIf="editingEmployeeIndex === null" (click)="addEmployee()">Add
+    Employee</ion-button>
+  <ion-button color="success" expand="full" *ngIf="editingEmployeeIndex !== null" (click)="saveEmployee()">Save
+    Changes</ion-button>
+</ion-content>

@@ -1,0 +1,27 @@
+.custom-card {
+    border: 0.1rem solid #d4d4d4;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    margin: 10% auto; /* Centraliza horizontalmente com margem superior */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 1rem;
+    width: 90%; /* Largura em porcentagem */
+    max-width: 500px; /* Largura máxima */
+  }
+  
+  ion-item ion-label {
+    font-size: 1rem;
+    width: 30%; /* Ajuste conforme necessário */
+  }
+  
+  ion-item ion-input, ion-item ion-select {
+    font-size: 1.2rem;
+  }
+  
+ 
+  
+  .print-button{
+    margin-top: 2rem; /* Margem superior em rem */
+    font-size: 0.8rem; /* Tamanho da fonte em rem */
+    width: 100%; /* Largura em porcentagem */
+  }

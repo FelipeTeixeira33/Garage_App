@@ -1,0 +1,54 @@
+.custom-card {
+    border: 0.1rem solid #d4d4d4;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    margin: 1% 0;
+    background-color: #59ba748c;
+    padding: 1rem;
+}
+
+.custom-card ion-card-header {
+    background-color: #e5e5e5;
+    padding: 0.5rem;
+}
+
+.custom-card ion-card-title {
+    color: #333333;
+    font-size: 1.5rem;
+}
+
+.custom-card ion-card-subtitle {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.user-card {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.user-card ion-card-title {
+    color: #333;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.user-card ion-card-subtitle {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.custom {
+    background-color: rgba(110, 115, 112, 0.382);
+    font-size: 1.2rem;
+    color: #0a0101;
+}
+
+.custom ion-select-option {
+    font-size: 1rem;
+}

@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="success"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title">
+      Hi, {{ loggedInUser }}!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="welcome-message">
+    <h1>Welcome to Ger's Garage !</h1>
+  </div>
+</ion-content>
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button routerLink="/adm-employer">
+      <ion-icon name="person-add"></ion-icon>
+      Employers
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/adm-appointment">
+      <ion-icon name="reload"></ion-icon>
+      Appointment Status
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/adm-receipt">
+      <ion-icon name="receipt"></ion-icon>
+      Receipt
+    </ion-tab-button>
+
+    <ion-tab-button (click)="logout()">
+      <ion-icon name="log-out"></ion-icon>
+      logout
+    </ion-tab-button>
+
+
+  </ion-tab-bar>
+</ion-tabs>

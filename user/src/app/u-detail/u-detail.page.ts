@@ -61,17 +61,6 @@ export class UDetailPage {
     this.users = await this.storage.get('users') || [];
   }
 
-  // Delete user from list and update storage
-  async deleteUser(index: number) {
-    this.users.splice(index, 1);
-    await this.storage.set('users', this.users);
-  }
-
-  // Delete vehicle from list and update storage
-  async deleteVehicle(index: number) {
-    this.vehicles.splice(index, 1);
-    await this.storage.set('vehicles', this.vehicles);
-  }
 
   // Add a new user and save to storage
   async saveUser() {
@@ -85,6 +74,13 @@ export class UDetailPage {
     };
   }
 
+  // Delete user from list and update storage
+  async deleteUser(index: number) {
+    this.users.splice(index, 1);
+    await this.storage.set('users', this.users);
+  }
+
+
   // Add a new vehicle and save to storage
   async saveVehicle() {
     this.vehicles.push(this.newVehicle);
@@ -97,6 +93,12 @@ export class UDetailPage {
       license: ''
     };
     this.vehicleForm.reset();
+  }
+
+   // Delete vehicle from list and update storage
+   async deleteVehicle(index: number) {
+    this.vehicles.splice(index, 1);
+    await this.storage.set('vehicles', this.vehicles);
   }
 
   // Toggle visibility of user or vehicle form
